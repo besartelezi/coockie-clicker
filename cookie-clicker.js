@@ -37,8 +37,9 @@
             ClickMultiplier++;
             Clicks *= ClickMultiplier;
             GoldenSpatula *= 3;
-            //This shows the current multiplier on the website
-            ButtonDescription.innerHTML = "Using the Golden Spatula costs " +GoldenSpatula+ " Krabby Patties, but it will let you make " +ClickMultiplier+ "x as many Krabby Patties!"
+            //Created a new variable that adds 1 to the current multiplier, this shows the current multiplier the player can get when purchasing the golden spatula
+            let ShowMultiplier = ClickMultiplier + 1;
+            ButtonDescription.innerHTML = "Using the Golden Spatula costs " +GoldenSpatula+ " Krabby Patties, but it will let you make " + ShowMultiplier + "x as many Krabby Patties!"
         }
     }
     Multiply.addEventListener("click", Multipliedby2ButtonClicks);
