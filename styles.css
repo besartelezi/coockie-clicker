@@ -5,26 +5,32 @@
 h1 {
   font-family: "Krabby Patty", sans-serif;
   font-size: 45px;
+  background-color: lightsteelblue;
+  padding: 10px;
+  text-align: center;
+  color: red;
 }
 
 .left-column {
   float: left;
-  width: 35%;
+  width: 27%;
+  margin-right: 3%;
 }
 
 .middle-column {
   display: inline-block;
-  width: 45%;
+  width: 40%;
 }
 
 .right-column {
   float: right;
-  width: 20%;
+  width: 27%;
+  margin-left: 3%;
 }
 
 #KrabbyPatty {
-  width: 500px;
-  outline: none;
+  width: 350px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map */
