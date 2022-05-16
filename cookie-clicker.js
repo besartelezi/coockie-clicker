@@ -3,6 +3,7 @@
     //Selection of the elements in the HTML that will be used in javascript
     const Counter = document.getElementById("BurgerCounter");
     const Button = document.getElementById("KrabbyPatty");
+    const ButtonDescription = document.getElementById("ButtonDescription")
 
     //The Variable of the amount of clicks on start, the value of each click and the value of the multiplier
     let ClickAmount = 0;
@@ -36,6 +37,8 @@
             ClickMultiplier++;
             Clicks *= ClickMultiplier;
             GoldenSpatula *= 3;
+            //This shows the current multiplier on the website
+            ButtonDescription.innerHTML = "Using the Golden Spatula costs " +GoldenSpatula+ " Krabby Patties, but it will let you make " +ClickMultiplier+ "x as many Krabby Patties!"
         }
     }
     Multiply.addEventListener("click", Multipliedby2ButtonClicks);
