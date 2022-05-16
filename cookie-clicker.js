@@ -8,7 +8,6 @@
     //Variables that ...
     let ClickAmount = 0;
     let Clicks = 1;
-    let Multiplier = 2;
 
     //Showing the current amount of clicks on the website
     Counter.innerHTML = ClickAmount;
@@ -20,14 +19,13 @@
     }
     Button.addEventListener("click", ButtonClicks);
 
-    //Multiply Function, this will increase the click-amount by 2
+    //Multiply Function, this will increase the click-amount by 2, but the user needs to pay 5 clicks to use it
     const Multipliedby2ButtonClicks = () => {
+        //If the user has less than 5 clicks, the button will not work.
         if (ClickAmount >= 5) {
             ClickAmount -= 5;
             Counter.innerHTML = ClickAmount;
-            Clicks *= Multiplier;
-        }
-        if (ClickAmount < 5) {
+            Clicks *= 2;
         }
     }
     Multiply.addEventListener("click", Multipliedby2ButtonClicks);
