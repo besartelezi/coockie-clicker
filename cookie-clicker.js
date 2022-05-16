@@ -26,6 +26,7 @@
             ClickAmount -= 5;
             Counter.innerHTML = ClickAmount;
             Clicks *= 2;
+            Multiply.style.display = "none";
         }
     }
     Multiply.addEventListener("click", Multipliedby2ButtonClicks);
