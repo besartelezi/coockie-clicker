@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Krabby Patty", sans-serif;
+  src: url("/resources/krabby_patty-demo.html");
+}
+h1 {
+  font-family: "Krabby Patty", sans-serif;
+  font-size: 45px;
+}
+
 .left-column {
   float: left;
   width: 35%;
@@ -13,10 +22,9 @@
   width: 20%;
 }
 
-#DioBrando {
+#KrabbyPatty {
   width: 500px;
   outline: none;
-  background-color: transparent;
 }
 
 /*# sourceMappingURL=styles.css.map */
