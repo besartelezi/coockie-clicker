@@ -1,2 +1,2 @@
-# coockie-clicker
-Creating a cookie clicker in order to learn more about incremental games, HTML, CSS, and Javascript.
+# JoJo Inspired Cookie Clicker
+With the power of programming and anime on my side, I have decided to create this JoJo inspired Cookie Clicker increment game.
