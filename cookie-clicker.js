@@ -8,10 +8,22 @@
     let Clicks = 1;
     let Multiplier = 2;
 
+
     //Clicking function, on click increase amount in label by 1
     const ButtonClicks = () => {
         ClickAmount += Clicks ;
         Counter.innerHTML = ClickAmount;
     }
-    Button.addEventListener("click", ButtonClicks)
+    Button.addEventListener("click", ButtonClicks);
+
+    const Multiply2Button = document.getElementById("multiplier");
+
+    const Multipliedby2ButtonClicks = () => {
+        Clicks *= Multiplier;
+    }
+    Multiply2Button.addEventListener("click", Multipliedby2ButtonClicks);
+
+
+
+
 })();
