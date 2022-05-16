@@ -22,11 +22,15 @@
 
     //Multiply Function, this will increase the click-amount by 2
     const Multipliedby2ButtonClicks = () => {
-        Clicks *= Multiplier;
+        if (ClickAmount >= 5) {
+            ClickAmount -= 5;
+            Counter.innerHTML = ClickAmount;
+            Clicks *= Multiplier;
+        }
+        if (ClickAmount < 5) {
+        }
     }
     Multiply.addEventListener("click", Multipliedby2ButtonClicks);
-
-
 
 
 })();
