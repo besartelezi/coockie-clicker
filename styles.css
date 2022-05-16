@@ -2,6 +2,12 @@
   font-family: "Krabby Patty", sans-serif;
   src: url("/resources/krabby_patty-demo.html");
 }
+body {
+  background-image: url("images/spongebob-background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 h1 {
   font-family: "Krabby Patty", sans-serif;
   font-size: 45px;
