@@ -1,13 +1,17 @@
 (function () {
 
-    //Selecting and naming the variables that are used in the HTML, while also adding the starting variable for the amount of clicks
+    //Selection of the elements in the HTML that will be used in javascript
     const Counter = document.getElementById("PunchCounter");
     const Button = document.getElementById("DioBrando");
+    const Multiply = document.getElementById("multiplier");
+
+    //Variables that ...
     let ClickAmount = 0;
-    Counter.innerHTML = ClickAmount;
     let Clicks = 1;
     let Multiplier = 2;
 
+    //Showing the current amount of clicks on the website
+    Counter.innerHTML = ClickAmount;
 
     //Clicking function, on click increase amount in label by 1
     const ButtonClicks = () => {
@@ -16,12 +20,11 @@
     }
     Button.addEventListener("click", ButtonClicks);
 
-    const Multiply2Button = document.getElementById("multiplier");
-
+    //Multiply Function, this will increase the click-amount by 2
     const Multipliedby2ButtonClicks = () => {
         Clicks *= Multiplier;
     }
-    Multiply2Button.addEventListener("click", Multipliedby2ButtonClicks);
+    Multiply.addEventListener("click", Multipliedby2ButtonClicks);
 
 
 
