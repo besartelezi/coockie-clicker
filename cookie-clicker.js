@@ -1,8 +1,8 @@
 (function () {
 
     //Selection of the elements in the HTML that will be used in javascript
-    const Counter = document.getElementById("PunchCounter");
-    const Button = document.getElementById("DioBrando");
+    const Counter = document.getElementById("BurgerCounter");
+    const Button = document.getElementById("KrabbyPatty");
     const Multiply = document.getElementById("multiplier");
 
     //Variables that ...

@@ -1,4 +1,4 @@
-# JoJo Inspired Cookie Clicker
-With the power of programming and anime on my side, I have decided to create this JoJo inspired Cookie Clicker increment game.</ br>
+# Krabby Patty Clicker
+With the power of programming and childrens cartoons on my side, I have created a cookie clicker with my own fun little twist on it. </br>
 
-#### [Click here to play the JoJo Click Game](https://besartelezi.github.io/coockie-clicker/)
+#### [Click here to play the Krusty Krab Click Game](https://besartelezi.github.io/coockie-clicker/)
