@@ -20,6 +20,7 @@
     //The different upgrades you can buy at the Krusty Krab
     let GoldenSpatula = 5;
     let Spongebob = 15;
+    let Squidward = 10;
 
     //Showing the current amount of clicks on the website
     Counter.innerHTML = ClickAmount;
@@ -75,6 +76,60 @@
         }
     }
     AutoClicker.addEventListener("click", AutoClickerBtnClicks)
+
+
+
+
+
+    //An array of quotes said by Squidward
+    const Quotes = [
+        "Hello. You've reached the house of unrecognized talent.",
+        "Why is it whenever I'm having fun, it's wrong?",
+        "It all started when I was born.",
+        "Welcome to the House of Misery. May I take your order?",
+        "I knew I shouldn't have gotten out of bed today",
+        "It's just a cruel reminder that I'm single and likely to remain that way forever.",
+        "Another day, another migraine",
+        "Fortunately, I have enough talent for all of you.",
+        "Welcome to the Krusty Krab, where it's almost as if the evolutionary clock ticks backwards.",
+        "Is it time already for you to ruin my day?",
+        "If I had a dollar for every brain you don't have, I'd have one dollar.",
+        "Do you have barnacles for brains?",
+        "Wake me up when I care.",
+        "I can't believe anybody would celebrate a holiday where a jolly prowler breaks into your house and leaves gifts.",
+        "I order the food, you cook the food, the customer gets the food. We do that for forty years and then we die.",
+        "Please come again... when I'm not working",
+        "Too bad SpongeBob is not here to enjoy SpongeBob not being here!",
+        "Here, Please Hit Me As Hard As You Can.",
+        "I Have No Soul.",
+        "Too Bad That Didn't Kill Me.",
+        "I Hate All Of You.",
+        "Well, It Wouldn't Be The First Time You Ruined Everything.",
+        "When I die, you stay away from my funeral.",
+    ]
+
+
+    const SquidwardButton = document.getElementById("squidward");
+    const EmptyListofQuotes = document.getElementById("QuotesList");
+    const AddSquidwardQuote = document.createElement("li");
+
+    const ActivateSquidward = () => {
+        if (ClickAmount >= Squidward) {
+            ClickAmount -= Squidward;
+            Counter.innerHTML = ClickAmount;
+            const RandomQuote = Quotes [Math.floor(Math.random() * Quotes.length)]
+            AddSquidwardQuote.appendChild(document.createTextNode(RandomQuote));
+            AddSquidwardQuote.setAttribute("id", RandomQuote);
+            EmptyListofQuotes.appendChild(AddSquidwardQuote);
+
+        }
+    }
+    SquidwardButton.addEventListener("click", ActivateSquidward)
+
+    // If i want to update the amount of cookies on the title of the webpage, I will have to add below code to a lot of different functions
+    // so it keeps up to date with the variable amount of clicks changing
+    // Is there an easier way to do this?
+    //  document.title = ClickAmount + " Krabby Patties"
 
 })();
 
