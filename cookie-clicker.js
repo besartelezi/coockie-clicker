@@ -1,5 +1,4 @@
 (function () {
-
     //Selection of the elements in the HTML that will be used in javascript
     const Counter = document.getElementById("BurgerCounter");
     const Button = document.getElementById("KrabbyPatty");
@@ -8,12 +7,12 @@
 
 
     //The Variable of the amount of clicks on start, the value of each click and the value of the multiplier
-    let ClickAmount = 100;
+    let ClickAmount = 0;
     let Clicks = 1;
     let ClickMultiplier = 1;
 
     //The variable amount of clicks per 10 seconds and the variable used to multiply this amount with per purchase
-    let AutoClicksPer10sec = 0;
+    let AutoClicksPer10sec = 1;
 
     //
     const CurrentMultiplier = document.getElementById("MultipyLabel");
@@ -24,7 +23,6 @@
 
     //Showing the current amount of clicks on the website
     Counter.innerHTML = ClickAmount;
-
     //Clicking function, on click increase amount in label by 1
     const ButtonClicks = () => {
         ClickAmount += Clicks ;
@@ -63,13 +61,17 @@
         if (ClickAmount >= Spongebob) {
             ClickAmount -= Spongebob;
             Counter.innerHTML = ClickAmount;
-            AutoClicksPer10sec++
+            // Only turn this on when the below code has been fixed AutoClicksPer10sec++
             //every 10 seconds, a value of '1' will be added to the total click amount, and the cost of the spongebob button will be doubled
             setInterval(function (){
               ClickAmount += AutoClicksPer10sec;
               Counter.innerHTML = ClickAmount;
-            },1000);
+            },10000);
+            Spongebob *= 2
             //timerruning === true (boolean)
+            //The Above code is still not working as intented
+            let SpongeBobCostShow = AutoClicksPer10sec++ +1
+            SpongebobDescription.innerHTML = "Spongebob is here to help you, for " +Spongebob+ " Krabby Patties, you will get " + SpongeBobCostShow + " Krabby Patties every 10 seconds.";
         }
     }
     AutoClicker.addEventListener("click", AutoClickerBtnClicks)
