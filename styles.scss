@@ -50,7 +50,7 @@ h1{
 .labelcurrentpatties{
   margin-top: 35px;
 }
-.goldenspatula{
+.buttons{
   margin-top: 35px;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 15px;
@@ -58,18 +58,18 @@ h1{
   font-family: "Krabby Patty", sans-serif;
   font-size: 20px;
   display: flex;
-}
-#multiplier{
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
-#goldenspatulaimage{
+.buttonimg {
   width: 150px;
   border-radius: 25px;
   flex: 1;
 }
-#ButtonDescription{
+.buttondescription{
   margin-left: 20px;
   text-align: left;
-  vertical-align: middle;
+  line-height: 35px;
 
 }
