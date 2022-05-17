@@ -8,12 +8,12 @@
 
 
     //The Variable of the amount of clicks on start, the value of each click and the value of the multiplier
-    let ClickAmount = 0;
+    let ClickAmount = 100;
     let Clicks = 1;
     let ClickMultiplier = 1;
 
     //The variable amount of clicks per 10 seconds and the variable used to multiply this amount with per purchase
-    let AutoClicksPer10sec = 1;
+    let AutoClicksPer10sec = 0;
 
     //
     const CurrentMultiplier = document.getElementById("MultipyLabel");
@@ -49,9 +49,9 @@
             GoldenSpatula *= 3;
             //Created a new variable that adds 1 to the current multiplier, this shows the current multiplier the player can get when purchasing the golden spatula
             let ShowMultiplier = ClickMultiplier + 1;
-            GoldenSpatulaDescription.innerHTML = "Using the Golden Spatula costs " +GoldenSpatula+ " Krabby Patties, but it will let you make " + ShowMultiplier + "x as many Krabby Patties!"
+            GoldenSpatulaDescription.innerHTML = "Using the Golden Spatula costs " +GoldenSpatula+ " Krabby Patties, but it will let you make " + ShowMultiplier + "x as many Krabby Patties!";
             //Show the current active multiplier
-            CurrentMultiplier.innerHTML = ClickMultiplier+ "x Krabby Patty per click"
+            CurrentMultiplier.innerHTML = ClickMultiplier+ "x Krabby Patty per click";
         }
     }
     Multiply.addEventListener("click", MultipliedbyxButtonClicks);
@@ -63,18 +63,17 @@
         if (ClickAmount >= Spongebob) {
             ClickAmount -= Spongebob;
             Counter.innerHTML = ClickAmount;
+            AutoClicksPer10sec++
             //every 10 seconds, a value of '1' will be added to the total click amount, and the cost of the spongebob button will be doubled
-            setInterval(function(){
-                ClickAmount += AutoClicksPer10sec
-                Counter.innerHTML = ClickAmount
-            }, 10000);
-            Spongebob *= 2;
-
-            let ShowMultiplier = ClickMultiplier + 1;
-            SpongebobDescription.innerHTML = "Spongebob is here to help you, for " +Spongebob+ " Krabby Patties, you will get 1 " + ShowMultiplier + "Krabby Patty every 10 seconds"
-
+            setInterval(function (){
+              ClickAmount += AutoClicksPer10sec;
+              Counter.innerHTML = ClickAmount;
+            },1000);
+            //timerruning === true (boolean)
         }
     }
     AutoClicker.addEventListener("click", AutoClickerBtnClicks)
 
 })();
+
+

@@ -12,6 +12,9 @@ body {
   float: left;
   width: 32%;
   margin-right: 3%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  margin-top: 35px;
 }
 
 .middle-column {
@@ -28,7 +31,8 @@ body {
 h1 {
   font-family: "Krabby Patty", sans-serif;
   font-size: 45px;
-  background-color: lightsteelblue;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
   padding: 10px;
   text-align: center;
   color: red;
@@ -47,8 +51,11 @@ h1 {
   text-align: center;
   font-family: "Krabby Patty", sans-serif;
   font-size: x-large;
-  background-color: lightsteelblue;
   color: black;
+}
+
+.labelcurrentpatties {
+  color: red;
 }
 
 .labelcurrentpatties {
