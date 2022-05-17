@@ -4,7 +4,7 @@
     const Button = document.getElementById("KrabbyPatty");
     const GoldenSpatulaDescription = document.getElementById("MultiplyBtnDescription");
     const SpongebobDescription = document.getElementById("AutoClickerBtnDescription")
-
+    const SquidwardDescription = document.getElementById("QuotesBtnDescription")
 
     //The Variable of the amount of clicks on start, the value of each click and the value of the multiplier
     let ClickAmount = 0;
@@ -20,7 +20,7 @@
     //The different upgrades you can buy at the Krusty Krab
     let GoldenSpatula = 5;
     let Spongebob = 15;
-    let Squidward = 10;
+    let Squidward = 500;
 
     //Showing the current amount of clicks on the website
     Counter.innerHTML = ClickAmount;
@@ -77,10 +77,6 @@
     }
     AutoClicker.addEventListener("click", AutoClickerBtnClicks)
 
-
-
-
-
     //An array of quotes said by Squidward
     const Quotes = [
         "Hello. You've reached the house of unrecognized talent.",
@@ -108,20 +104,26 @@
         "When I die, you stay away from my funeral.",
     ]
 
-
+    //Setting the Squidward Button variable
     const SquidwardButton = document.getElementById("squidward");
-    const EmptyListofQuotes = document.getElementById("QuotesList");
-    const AddSquidwardQuote = document.createElement("li");
 
     const ActivateSquidward = () => {
         if (ClickAmount >= Squidward) {
             ClickAmount -= Squidward;
             Counter.innerHTML = ClickAmount;
+            //Selecting a random quote from the array of iconic Squidward quotes
             const RandomQuote = Quotes [Math.floor(Math.random() * Quotes.length)]
+            //Adds a quote to the list in the HTML
+            const EmptyListofQuotes = document.getElementById("QuotesList");
+            const AddSquidwardQuote = document.createElement("li");
             AddSquidwardQuote.appendChild(document.createTextNode(RandomQuote));
-            AddSquidwardQuote.setAttribute("id", RandomQuote);
             EmptyListofQuotes.appendChild(AddSquidwardQuote);
-
+            //This removes the quote after 10 seconds from the list
+            setTimeout( function (){
+                EmptyListofQuotes.removeChild(EmptyListofQuotes.firstChild)
+            },10000)
+            Squidward *= 10;
+            SquidwardDescription.innerHTML = "Squidward is here to \"help\" you out. For " +Squidward+ " Krabby Patties, he will give you a snarky comment.";
         }
     }
     SquidwardButton.addEventListener("click", ActivateSquidward)
