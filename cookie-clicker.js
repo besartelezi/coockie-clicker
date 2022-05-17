@@ -4,12 +4,16 @@
     const Counter = document.getElementById("BurgerCounter");
     const Button = document.getElementById("KrabbyPatty");
     const GoldenSpatulaDescription = document.getElementById("MultiplyBtnDescription");
+    const SpongebobDescription = document.getElementById("AutoClickerBtnDescription")
 
 
     //The Variable of the amount of clicks on start, the value of each click and the value of the multiplier
     let ClickAmount = 0;
     let Clicks = 1;
     let ClickMultiplier = 1;
+
+    //The variable amount of clicks per 10 seconds and the variable used to multiply this amount with per purchase
+    let AutoClicksPer10sec = 1;
 
     //
     const CurrentMultiplier = document.getElementById("MultipyLabel");
@@ -54,14 +58,23 @@
 
     //variable of the button that will be used for the autoclicker
     const AutoClicker = document.getElementById("autoclicker");
-
+    //AutoClicker function, the purchasing of said button has been coded the same way as the previous button
     const AutoClickerBtnClicks = () => {
         if (ClickAmount >= Spongebob) {
             ClickAmount -= Spongebob;
             Counter.innerHTML = ClickAmount;
+            //every 10 seconds, a value of '1' will be added to the total click amount, and the cost of the spongebob button will be doubled
+            setInterval(function(){
+                ClickAmount += AutoClicksPer10sec
+                Counter.innerHTML = ClickAmount
+            }, 10000);
+            Spongebob *= 2;
+
+            let ShowMultiplier = ClickMultiplier + 1;
+            SpongebobDescription.innerHTML = "Spongebob is here to help you, for " +Spongebob+ " Krabby Patties, you will get 1 " + ShowMultiplier + "Krabby Patty every 10 seconds"
 
         }
     }
-
+    AutoClicker.addEventListener("click", AutoClickerBtnClicks)
 
 })();
