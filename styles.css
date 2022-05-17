@@ -15,22 +15,23 @@ h1 {
   padding: 10px;
   text-align: center;
   color: red;
+  margin-top: 35px;
 }
 
 .left-column {
   float: left;
-  width: 27%;
+  width: 32%;
   margin-right: 3%;
 }
 
 .middle-column {
   display: inline-block;
-  width: 40%;
+  width: 30%;
 }
 
 .right-column {
   float: right;
-  width: 27%;
+  width: 32%;
   margin-left: 3%;
 }
 
@@ -42,10 +43,42 @@ h1 {
   margin-right: auto;
 }
 
-.labelcurrentpatties {
+.labelcurrentpatties, .labelmultiplier {
   text-align: center;
   font-family: "Krabby Patty", sans-serif;
   font-size: x-large;
+  background-color: lightsteelblue;
+  color: black;
+}
+
+.labelcurrentpatties {
+  margin-top: 35px;
+}
+
+.goldenspatula {
+  margin-top: 35px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 15px;
+  border-radius: 25px;
+  font-family: "Krabby Patty", sans-serif;
+  font-size: 20px;
+  display: flex;
+}
+
+#multiplier {
+  cursor: pointer;
+}
+
+#goldenspatulaimage {
+  width: 150px;
+  border-radius: 25px;
+  flex: 1;
+}
+
+#ButtonDescription {
+  margin-left: 20px;
+  text-align: left;
+  vertical-align: middle;
 }
 
 /*# sourceMappingURL=styles.css.map */
