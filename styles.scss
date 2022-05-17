@@ -35,4 +35,12 @@ h1{
 #KrabbyPatty {
   width: 350px;
   cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.labelcurrentpatties{
+  text-align: center;
+  font-family: "Krabby Patty", sans-serif;
+  font-size: x-large;
 }
