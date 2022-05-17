@@ -8,16 +8,6 @@ body {
   background-size: cover;
 }
 
-h1 {
-  font-family: "Krabby Patty", sans-serif;
-  font-size: 45px;
-  background-color: lightsteelblue;
-  padding: 10px;
-  text-align: center;
-  color: red;
-  margin-top: 35px;
-}
-
 .left-column {
   float: left;
   width: 32%;
@@ -33,6 +23,16 @@ h1 {
   float: right;
   width: 32%;
   margin-left: 3%;
+}
+
+h1 {
+  font-family: "Krabby Patty", sans-serif;
+  font-size: 45px;
+  background-color: lightsteelblue;
+  padding: 10px;
+  text-align: center;
+  color: red;
+  margin-top: 35px;
 }
 
 #KrabbyPatty {
