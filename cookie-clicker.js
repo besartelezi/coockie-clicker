@@ -16,6 +16,7 @@
     CurrentMultiplier.innerHTML = "1x Krabby Patty per click"
     //The different upgrades you can buy at the Krusty Krab
     let GoldenSpatula = 5;
+    let Spongebob = 15;
 
     //Showing the current amount of clicks on the website
     Counter.innerHTML = ClickAmount;
@@ -40,6 +41,7 @@
             Clicks /= ClickMultiplier;
             ClickMultiplier++;
             Clicks *= ClickMultiplier;
+            //This increases the next purchase of the Golden Spatula
             GoldenSpatula *= 3;
             //Created a new variable that adds 1 to the current multiplier, this shows the current multiplier the player can get when purchasing the golden spatula
             let ShowMultiplier = ClickMultiplier + 1;
@@ -54,7 +56,11 @@
     const AutoClicker = document.getElementById("autoclicker");
 
     const AutoClickerBtnClicks = () => {
-        
+        if (ClickAmount >= Spongebob) {
+            ClickAmount -= Spongebob;
+            Counter.innerHTML = ClickAmount;
+
+        }
     }
 
 
