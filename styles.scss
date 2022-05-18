@@ -86,11 +86,14 @@ h1{
   text-align: left;
   line-height: 35px;
 }
-#QuotesList{
+#QuotesList, .activeboosts{
   background-color: rgba(255, 255, 255, 0.5);
   padding: 15px;
   border-radius: 25px;
   font-family: "Krabby Patty", sans-serif;
   font-size: 20px;
   list-style-image: url("images/handsomesquidward.png");
+}
+.activeboosts{
+  text-align: center;
 }

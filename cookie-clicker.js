@@ -2,26 +2,34 @@
     //Selection of the elements in the HTML that will be used in javascript
     const Counter = document.getElementById("BurgerCounter");
     const Button = document.getElementById("KrabbyPatty");
+
     const GoldenSpatulaDescription = document.getElementById("MultiplyBtnDescription");
-    const SpongebobDescription = document.getElementById("AutoClickerBtnDescription")
-    const SquidwardDescription = document.getElementById("QuotesBtnDescription")
+    const SpongebobDescription = document.getElementById("AutoClickerBtnDescription");
+    const SquidwardDescription = document.getElementById("QuotesBtnDescription");
+    const AnchoviesDescription = document.getElementById("BonusBtnDescription");
+
 
     //The Variable of the amount of clicks on start, the value of each click and the value of the multiplier
-    let ClickAmount = 0;
+    let ClickAmount = 500000;
     let Clicks = 1;
     let ClickMultiplier = 1;
-
     //The variable amount of clicks per 10 seconds
     let AutoClicksPer10sec = 1;
 
-    //
-    const CurrentMultiplier = document.getElementById("MultipyLabel");
-    CurrentMultiplier.innerHTML = "1x Krabby Patty per click"
+    //Showing the current multiplier, and amount of Spongebobs helping you
+    const CurrentMultiplier = document.getElementById("labelcurrentmultiplier");
+    CurrentMultiplier.innerHTML = "You currently get 1x Krabby Patties per click";
+    const CurrentSpongebobs = document.getElementById("labelspongebobshelping");
+    CurrentSpongebobs.innerHTML = "There are currently 0 Spongebobs helping you";
+    const CurrentAnchoviesBonus = document.getElementById("labelanchoviestimer");
+    CurrentAnchoviesBonus.innerHTML = "There is no Hungry Anchovies Bonus currently active";
+
     //The different upgrades you can buy at the Krusty Krab
     let GoldenSpatula = 5;
     let Spongebob = 15;
     let Squidward = 300;
     let AmountofClicksPer10sec = 2;
+    let AnchoviesBonus = 50;
 
     //Showing the current amount of clicks on the website
     Counter.innerHTML = ClickAmount;
@@ -51,7 +59,7 @@
             let ShowMultiplier = ClickMultiplier + 1;
             GoldenSpatulaDescription.innerHTML = "Using the Golden Spatula costs " +GoldenSpatula+ " Krabby Patties, but it will let you make " + ShowMultiplier + "x as many Krabby Patties!";
             //Show the current active multiplier
-            CurrentMultiplier.innerHTML = ClickMultiplier+ "x Krabby Patty per click";
+            CurrentMultiplier.innerHTML = "You currently get " +ClickMultiplier+ "x Krabby Patties per click";
         }
     }
     Multiply.addEventListener("click", MultipliedbyxButtonClicks);
@@ -66,18 +74,37 @@
             Counter.innerHTML = ClickAmount;
             // Only turn this on when the below code has been fixed AutoClicksPer10sec++
             //every 10 seconds, a value of '1' will be added to the total click amount, and the cost of the spongebob button will be doubled
-            setInterval(function (){
+            setInterval( () => {
                 ClickAmount += AutoClicksPer10sec;
                 Counter.innerHTML = ClickAmount;
-                },5000);
+                },10000);
             Spongebob *= 2
-            //timerruning === true (boolean)
-            //The Above code is still not working as intented
+            CurrentSpongebobs.innerHTML = "There are currently " + AmountofClicksPer10sec + " Spongebobs helping you";
             let SpongebobCostShowIncreasedAmount = AmountofClicksPer10sec++
             SpongebobDescription.innerHTML = "Spongebob is here to help you, for " +Spongebob+ " Krabby Patties, you will get " + SpongebobCostShowIncreasedAmount + " Krabby Patties every 10 seconds.";
         }
     }
     AutoClicker.addEventListener("click", AutoClickerBtnClicks)
+
+    const Bonus = document.getElementById("bonus");
+    const BoostButtonClick = () => {
+        if (ClickAmount >= AnchoviesBonus){
+            ClickAmount -= AnchoviesBonus;
+            Counter.innerHTML = ClickAmount;
+            //When the button is activated, the user gets a 200% increase in clicks and autoclicks
+            Clicks *= 2;
+            AutoClicksPer10sec *= 2;
+            //After 30 seconds, the boost wears off. I used the timeout function, so that after 30 seconds, the Clicks and Autoclicks get divided by 2.
+            setTimeout(() =>{
+                Clicks /= 2
+                AutoClicksPer10sec /= 2
+            },30000)
+            AnchoviesBonus *= 4;
+            AnchoviesDescription.innerHTML = "A hyperactive horde of hungry anchovies will appear! For " +AnchoviesBonus+ " Krabby Patties, you will get a boost of 200% increase on all Krabby Patties for 30 seconds."
+
+        }
+    }
+    Bonus.addEventListener('click', BoostButtonClick)
 
 
     //An array of quotes said by Squidward
