@@ -10,7 +10,7 @@
 
 
     //The Variable of the amount of clicks on start, the value of each click and the value of the multiplier
-    let ClickAmount = 500000;
+    let ClickAmount = 0;
     let Clicks = 1;
     let ClickMultiplier = 1;
     //The variable amount of clicks per 10 seconds
