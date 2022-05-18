@@ -35,6 +35,18 @@ I quickly realized that I had to mix up my way of working, constantly switching 
 The biggest challenge for me, by far, is figuring out a way to use the setInterval function in order to add '1' click value every 10 seconds to the total amount of clicks value. </br>
 I have yet to figure out a way to make this work, but I will keep you updated. <br>
 
+How does this function need to work? My way of thinking is: </br>
+When clicking the button, the first thing that needs to be checked is if the amount of clicks the user has >= the cost of the button.
+
+If this is **TRUE**, then what needs to be checked is if the click per 10 seconds function is already running or not. If it is already running, then I need to clearInterval() first and grow the value of the amount of clicks per 10 seconds. 
+**THEN** I need to start the function again that adds clicks per 10 seconds. </br>
+
+If this is false, then nothing will happen.
+
+I tried doing it this way, but unfortunately, I still haven't found a way to do it this way. That's why I'll just let the function run multiple times without letting the amount of clicks per 10 seconds grow.
+So instead of it it being 3 clicks per 10 seconds, I will have 1 function run 3 times at the same time that adds 1 click per 10 seconds.
+I'm not that content of not being to find a solution in a way that I like, but, if it works it works.
+
 ## MATH, More Awesome Than Helicopterswithbazookasandlasers
 The most fun I've had with this assignment, was creating original ways to make mathematical functions work. The best example I can give is the way I made the Multiplier button:
 

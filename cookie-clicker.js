@@ -20,7 +20,8 @@
     //The different upgrades you can buy at the Krusty Krab
     let GoldenSpatula = 5;
     let Spongebob = 15;
-    let Squidward = 500;
+    let Squidward = 300;
+    let AmountofClicksPer10sec = 2;
 
     //Showing the current amount of clicks on the website
     Counter.innerHTML = ClickAmount;
@@ -63,38 +64,20 @@
         if (ClickAmount >= Spongebob) {
             ClickAmount -= Spongebob;
             Counter.innerHTML = ClickAmount;
-
+            // Only turn this on when the below code has been fixed AutoClicksPer10sec++
+            //every 10 seconds, a value of '1' will be added to the total click amount, and the cost of the spongebob button will be doubled
+            setInterval(function (){
+                ClickAmount += AutoClicksPer10sec;
+                Counter.innerHTML = ClickAmount;
+                },5000);
+            Spongebob *= 2
+            //timerruning === true (boolean)
+            //The Above code is still not working as intented
+            let SpongebobCostShowIncreasedAmount = AmountofClicksPer10sec++
+            SpongebobDescription.innerHTML = "Spongebob is here to help you, for " +Spongebob+ " Krabby Patties, you will get " + SpongebobCostShowIncreasedAmount + " Krabby Patties every 10 seconds.";
         }
     }
     AutoClicker.addEventListener("click", AutoClickerBtnClicks)
-
-
-
-
-
-
-    //Code Under Construction
-    //variable of the button that will be used for the autoclicker
-    //     const AutoClicker = document.getElementById("autoclicker");
-    //     //AutoClicker function, the purchasing of said button has been coded the same way as the previous button
-    //     const AutoClickerBtnClicks = () => {
-    //         if (ClickAmount >= Spongebob) {
-    //             ClickAmount -= Spongebob;
-    //             Counter.innerHTML = ClickAmount;
-    //             // Only turn this on when the below code has been fixed AutoClicksPer10sec++
-    //             //every 10 seconds, a value of '1' will be added to the total click amount, and the cost of the spongebob button will be doubled
-    //             setInterval(function (){
-    //               ClickAmount += AutoClicksPer10sec;
-    //               Counter.innerHTML = ClickAmount;
-    //             },10000);
-    //             Spongebob *= 2
-    //             //timerruning === true (boolean)
-    //             //The Above code is still not working as intented
-    //             let SpongeBobCostShow = AutoClicksPer10sec++ +1
-    //             SpongebobDescription.innerHTML = "Spongebob is here to help you, for " +Spongebob+ " Krabby Patties, you will get " + SpongeBobCostShow + " Krabby Patties every 10 seconds.";
-    //         }
-    //     }
-    //     AutoClicker.addEventListener("click", AutoClickerBtnClicks)
 
 
     //An array of quotes said by Squidward
@@ -148,11 +131,10 @@
     }
     SquidwardButton.addEventListener("click", ActivateSquidward)
 
-    // If i want to update the amount of cookies on the title of the webpage, I will have to add below code to a lot of different functions
-    // so it keeps up to date with the variable amount of clicks changing
-    // Is there an easier way to do this?
-    //  document.title = ClickAmount + " Krabby Patties"
-
+    //Every 5 seconds, the title of the page changes to show the current amount of krabby patties
+    setInterval(function (){
+        document.title = ClickAmount + " Krabby Patties"
+    }, 5000)
 })();
 
 
