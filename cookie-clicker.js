@@ -11,7 +11,7 @@
     let Clicks = 1;
     let ClickMultiplier = 1;
 
-    //The variable amount of clicks per 10 seconds and the variable used to multiply this amount with per purchase
+    //The variable amount of clicks per 10 seconds
     let AutoClicksPer10sec = 1;
 
     //
@@ -55,6 +55,7 @@
     }
     Multiply.addEventListener("click", MultipliedbyxButtonClicks);
 
+
     //variable of the button that will be used for the autoclicker
     const AutoClicker = document.getElementById("autoclicker");
     //AutoClicker function, the purchasing of said button has been coded the same way as the previous button
@@ -62,20 +63,39 @@
         if (ClickAmount >= Spongebob) {
             ClickAmount -= Spongebob;
             Counter.innerHTML = ClickAmount;
-            // Only turn this on when the below code has been fixed AutoClicksPer10sec++
-            //every 10 seconds, a value of '1' will be added to the total click amount, and the cost of the spongebob button will be doubled
-            setInterval(function (){
-              ClickAmount += AutoClicksPer10sec;
-              Counter.innerHTML = ClickAmount;
-            },10000);
-            Spongebob *= 2
-            //timerruning === true (boolean)
-            //The Above code is still not working as intented
-            let SpongeBobCostShow = AutoClicksPer10sec++ +1
-            SpongebobDescription.innerHTML = "Spongebob is here to help you, for " +Spongebob+ " Krabby Patties, you will get " + SpongeBobCostShow + " Krabby Patties every 10 seconds.";
+
         }
     }
     AutoClicker.addEventListener("click", AutoClickerBtnClicks)
+
+
+
+
+
+
+    //Code Under Construction
+    //variable of the button that will be used for the autoclicker
+    //     const AutoClicker = document.getElementById("autoclicker");
+    //     //AutoClicker function, the purchasing of said button has been coded the same way as the previous button
+    //     const AutoClickerBtnClicks = () => {
+    //         if (ClickAmount >= Spongebob) {
+    //             ClickAmount -= Spongebob;
+    //             Counter.innerHTML = ClickAmount;
+    //             // Only turn this on when the below code has been fixed AutoClicksPer10sec++
+    //             //every 10 seconds, a value of '1' will be added to the total click amount, and the cost of the spongebob button will be doubled
+    //             setInterval(function (){
+    //               ClickAmount += AutoClicksPer10sec;
+    //               Counter.innerHTML = ClickAmount;
+    //             },10000);
+    //             Spongebob *= 2
+    //             //timerruning === true (boolean)
+    //             //The Above code is still not working as intented
+    //             let SpongeBobCostShow = AutoClicksPer10sec++ +1
+    //             SpongebobDescription.innerHTML = "Spongebob is here to help you, for " +Spongebob+ " Krabby Patties, you will get " + SpongeBobCostShow + " Krabby Patties every 10 seconds.";
+    //         }
+    //     }
+    //     AutoClicker.addEventListener("click", AutoClickerBtnClicks)
+
 
     //An array of quotes said by Squidward
     const Quotes = [
