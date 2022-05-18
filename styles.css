@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Krabby Patty", sans-serif;
-  src: url("/resources/krabby_patty-demo.html");
+  font-family: "Krabby Patty";
+  src: url("resources/fonts/KrabbyPatty/Krabby Patty.woff");
 }
 body {
   background-image: url("images/spongebob-background.svg");

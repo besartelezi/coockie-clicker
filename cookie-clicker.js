@@ -120,9 +120,9 @@
             EmptyListofQuotes.appendChild(AddSquidwardQuote);
             //This removes the quote after 10 seconds from the list
             setTimeout( function (){
-                EmptyListofQuotes.removeChild(EmptyListofQuotes.lastChild)
+                EmptyListofQuotes.removeChild(EmptyListofQuotes.firstChild)
             },10000)
-            Squidward *= 10;
+            Squidward *= 2;
             SquidwardDescription.innerHTML = "Squidward is here to \"help\" you out. For " +Squidward+ " Krabby Patties, he will give you a snarky comment.";
         }
     }
